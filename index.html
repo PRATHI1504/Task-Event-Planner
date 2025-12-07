@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Task & Event Planner</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="auth-page">
+    <div class="auth-card glass">
+      <h1 class="brand">Task & Event <span>Planner</span></h1>
+      <p class="muted">Sign in to continue to your task & event planner</p>
+
+      <form id="loginForm" class="form" autocomplete="off">
+        <label>Username
+          <input id="login-username" required autocomplete="username" />
+        </label>
+        <label>Password
+          <input id="login-password" type="password" required autocomplete="current-password" />
+        </label>
+
+        <div class="row">
+          <button class="btn primary">Sign in</button>
+          <a class="btn ghost" href="register.html">Create account</a>
+        </div>
+
+        <div id="login-error" class="error" role="alert" aria-live="polite"></div>
+      </form>
+    </div>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

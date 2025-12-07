@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Calendar — Task & Event Planner</title>
+<link rel="stylesheet" href="assets/style.css">
+
+<style>
+  /* --- TOOLBAR STYLES --- */
+  .calendar-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  .center-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .month-label {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .year-controls {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.05);
+    border-radius: 6px;
+    padding: 2px 5px;
+  }
+
+  .year-controls .btn.small {
+    padding: 2px 8px;
+    height: auto;
+    font-size: 1rem;
+  }
+
+  /* --- CURRENT DATE HIGHLIGHT STYLES --- */
+  .cell.today {
+    background-color: #8e44ad !important;
+    color: #ffffff !important;
+    border: 1px solid #9b59b6;
+    box-shadow: 0 0 15px rgba(142, 68, 173, 0.6);
+    font-weight: 700;
+    transform: scale(1.05);
+    z-index: 10;
+  }
+
+  .cell.today .date {
+    color: #ffffff !important;
+  }
+</style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar glass" aria-label="Sidebar">
+      <div class="sidebar-top">
+        <h2 class="brand small">Task & Event<span>Planner</span></h2>
+        <div class="user-info" id="user-info">Welcome User</div>
+      </div>
+
+      <nav class="nav">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="calendar.html" class="nav-link active">Calendar</a>
+        <a href="tasks.html" class="nav-link">Tasks</a>
+        <a href="events.html" class="nav-link">Events</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button id="themeToggle" class="btn ghost">Toggle theme</button>
+        <button id="logoutBtn" class="btn outline">Logout</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        
+        <div class="calendar-toolbar">
+
+    <div class="left-group">
+        <button id="prevMonth" class="btn small">‹</button>
+        <h2 id="monthLabel" class="month-label">December 2025</h2>
+        <button id="nextMonth" class="btn small">›</button>
+    </div>
+
+    <div class="right-group">
+        <button id="prevYear" class="btn small">‹</button>
+        <button id="yearDisplay" class="btn ghost small">2025 ▾</button>
+        <button id="nextYear" class="btn small">›</button>
+
+        <select id="monthSelect" class="month-select"></select>
+    </div>
+
+</div>
+
+
+
+      </header>
+
+      <section class="calendar-wrap">
+        <div class="weekdays" role="list">
+          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+        <div id="calendarGrid" class="calendar-grid" role="grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="yearPicker" class="overlay" aria-hidden="true">
+    <div class="overlay-card">
+      <h3>Select year</h3>
+      <div id="yearList" class="year-list"></div>
+      <div class="row" style="justify-content:flex-end;margin-top:12px">
+        <button id="closeYearPicker" class="btn ghost">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card glass">
+      <button id="closeModal" class="close" aria-label="Close modal">&times;</button>
+      <h3 id="modalTitle">Add Event</h3>
+      <form id="eventForm" class="form">
+        <label>Title<input id="eventTitle" required></label>
+        <label>Time<input id="eventTime" type="time"></label>
+        <label>Category<input id="eventCategory" placeholder="e.g. Meeting, Birthday"></label>
+        <label>Description<textarea id="eventDesc"></textarea></label>
+        <div class="row">
+          <button class="btn primary" id="saveEvent">Save</button>
+          <button class="btn ghost" id="deleteEvent" type="button">Delete</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

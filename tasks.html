@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tasks</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar glass" aria-label="Sidebar">
+      <div class="sidebar-top">
+        <h2 class="brand small">Modern<span>Calendar</span></h2>
+        <div class="user-info" id="user-info"></div>
+      </div>
+
+      <nav class="nav">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="calendar.html" class="nav-link">Calendar</a>
+        <a href="tasks.html" class="nav-link active">Tasks</a>
+        <a href="events.html" class="nav-link">Events</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button id="themeToggle" class="btn ghost">Toggle theme</button>
+        <button id="logoutBtn" class="btn outline">Logout</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <h2>Tasks</h2>
+        <p class="muted">Create tasks and keep track of progress</p>
+      </header>
+
+      <section class="task-section">
+        <div class="glass-card task-input">
+          <input id="taskTitle" placeholder="Task title">
+          <input id="taskDue" type="date">
+          <button class="btn primary" id="addTaskBtn">Add Task</button>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+      </section>
+    </main>
+  </div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

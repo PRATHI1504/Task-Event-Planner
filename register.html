@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register — Task & Event Planner</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="auth-page">
+    <div class="auth-card glass">
+      <h1 class="brand">Task & Event<span>Planner</span></h1>
+      <p class="muted">Create a free account to manage events & tasks</p>
+
+      <form id="registerForm" class="form" autocomplete="off">
+        <label>Username
+          <input id="reg-username" required autocomplete="username" />
+        </label>
+        <label>Password
+          <input id="reg-password" type="password" required autocomplete="new-password" />
+        </label>
+        <label>Confirm Password
+          <input id="reg-password2" type="password" required autocomplete="new-password" />
+        </label>
+
+        <div class="row">
+          <button class="btn primary">Create account</button>
+          <a class="btn ghost" href="index.html">Back to login</a>
+        </div>
+
+        <div id="reg-error" class="error" role="alert" aria-live="polite"></div>
+      </form>
+    </div>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
